@@ -1,11 +1,10 @@
 pipeline {
-    agent any;
-    triggers {
-          githubPush()
-    }
-    environment { //环境变量
+    agent any
+
+    environment {
         GREETING = 'Hello World'
     }
+
     stages{
         stage('Begin') {
             steps{
