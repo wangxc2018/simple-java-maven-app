@@ -6,7 +6,7 @@ pipeline {
     stages{
         stage('Begin') {
             steps{
-                echo "${GREETING}";
+                echo "${GREETING}"
                 echo "Running ${env.BUILD_ID}"
             }
         }
