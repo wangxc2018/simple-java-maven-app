@@ -17,26 +17,28 @@ pipeline {
                 bat 'mvn -B -DskipTests clean package'
             }
         }
+
         stage('Test') {
             steps{
                 bat 'mvn test'
             }
         }
+
         stage('Deploy') {
             steps{
                 echo 'Deploying...'
             }
         }
-   }
-   post {
+    }
+    post {
         aborted {
             echo 'Build Aborted!'
         }
         success {
             echo 'Build Success!'
         }
-       failure {
+        failure {
            echo 'Build Failure!'
-       }
+        }
     }
 }
