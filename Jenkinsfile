@@ -14,12 +14,12 @@ pipeline {
         }
         stage('Build') {
             steps{
-                echo 'Building...'
+                sh 'mvn -B -DskipTests clean package'
             }
         }
         stage('Test') {
             steps{
-                echo 'Testing...'
+                sh 'mvn test'
             }
         }
         stage('Deploy') {
@@ -28,7 +28,7 @@ pipeline {
             }
         }
    }
-   post { //构建完成后置操作
+   post {
         aborted {
             echo 'Build Aborted!'
         }
