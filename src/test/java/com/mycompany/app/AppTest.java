@@ -10,8 +10,7 @@ import static org.junit.Assert.*;
 /**
  * Unit test for simple App.
  */
-public class AppTest
-{
+public class AppTest{
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 

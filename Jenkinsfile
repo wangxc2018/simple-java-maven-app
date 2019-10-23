@@ -1,5 +1,8 @@
 pipeline {
     agent any;
+    triggers {
+          githubPush()
+    }
     environment { //环境变量
         GREETING = 'Hello World'
     }
